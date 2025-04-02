@@ -5,6 +5,9 @@ import torch.nn.functional as F
 
 
 class RNNLayer(nn.Module):
+    """
+    RNN layer with tanh activation function
+    """
     def __init__(self, input_size, hidden_size, output_size):
         super(RNNLayer, self).__init__()
         self.hidden_size = hidden_size
@@ -23,6 +26,9 @@ class RNNLayer(nn.Module):
 
 
 class RNN(nn.Module):
+    """
+    RNN model with multiple layers
+    """
     def __init__(self, input_size, hidden_size, output_size, num_layer = 1):
         super(RNN, self).__init__()
         self.layers = nn.ModuleList(
